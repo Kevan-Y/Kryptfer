@@ -1,20 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Spartan&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+html {
+  overflow: overlay;
+
+  background: rgb(31, 42, 58);
+  background: linear-gradient(27deg, rgba(31, 42, 58, 1) 0%, rgba(31, 42, 58, 1) 33%, rgba(30, 58, 138, 1) 69%, rgba(136, 19, 55, 1) 100%);
+  background-size: cover;
+  /* height: 100%; */
+  background-repeat: no-repeat;
+  /* font-family: 'Playfair Display', serif; */
+  font-family: 'Spartan', 'sans-serif'
+
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.perspective {
+  perspective: 100rem;
 }
 
-* {
-  box-sizing: border-box;
-} */
+.rotation {
+  transform: rotateY(-18deg)rotateX(10deg);
+}
+
+.rotationServiceCard {
+  transform: rotateY(-20deg);
+}
+
+::-webkit-scrollbar {
+  width: 13px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9ca3af40;
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af75;
+}

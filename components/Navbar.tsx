@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/Link';
 const Navbar = () => {
 	return (
-		<div className='w-full text-gray-100 transparent flex  px-12 py-4 items-center justify-between'>
+		<nav className='w-full text-gray-100 transparent flex px-12 lg:px-32 py-4 items-center justify-between'>
 			<Link href='/'>
 				<img
 					src={'/image/kryptofer_logo.png'}
@@ -19,8 +19,8 @@ const Navbar = () => {
 						</Link>
 					</li>
 					<li>
-						<Link href='/transaction'>
-							<a>Transaction</a>
+						<Link href='/wallet'>
+							<a>Wallet</a>
 						</Link>
 					</li>
 					<li className='bg-blue-700 px-4 py-2 rounded-full'>
@@ -30,7 +30,7 @@ const Navbar = () => {
 					</li>
 				</ul>
 			</div>
-		</div>
+		</nav>
 	);
 };
 
