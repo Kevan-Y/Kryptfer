@@ -14,7 +14,7 @@ const Home: NextPage = () => {
 	return (
 		<>
 			<div className='flex flex-col mt-32 lg:flex-row xl:mx-24 2xl:mx-56 gap-12'>
-				<div className='flex-1 text-gray-100'>
+				<div className='flex-1'>
 					<h1 className='font-semibold text-4xl leading-relaxed'>
 						Send Crypto <br /> across the world
 					</h1>
@@ -29,7 +29,7 @@ const Home: NextPage = () => {
 						Connect Wallet
 					</button>
 				</div>
-				<div className='flex-1 text-gray-100 perspective'>
+				<div className='flex-1 perspective'>
 					<div className='flex flex-col mt-10 justify-items-center place-items-center text-xs xs:text-base rotation'>
 						<div className='w-full flex text-center border-t-2 border-b border-x-2 rounded-t-3xl bg-gray-800 border-gray-900 backdrop-blur bg-opacity-20 border-opacity-25'>
 							<div className='w-full py-8 px-4 border-r-2 border-opacity-10 border-gray-900 '>
@@ -55,14 +55,14 @@ const Home: NextPage = () => {
 
 			<hr className='my-16 border-0 h-[2px] bg-gradient-to-r from-[#6b728000] via-[#6b728075] to-[#6b728000]' />
 
-			<div className='flex flex-col  lg:flex-row xl:mx-24 gap-12'>
-				<div className='flex-1 text-gray-100 self-center'>
+			<div className='flex flex-col lg:flex-row xl:mx-24 gap-12'>
+				<div className='flex-1 self-center'>
 					<h1 className='font-semibold text-4xl leading-relaxed'>
 						Services that we
 						<br /> continue to improve
 					</h1>
 				</div>
-				<div className='flex-1 flex flex-col gap-y-4 text-gray-100 perspective'>
+				<div className='flex-1 flex flex-col gap-y-4 perspective'>
 					<div className='flex py-8 px-4 bg-gray-800 rounded-3xl backdrop-blur bg-opacity-25 rotationServiceCard shadow-lg'>
 						<div className='self-center mx-8 text-green-500'>
 							<BsShieldCheck size='2.5rem' />
@@ -101,7 +101,7 @@ const Home: NextPage = () => {
 
 			<hr className='my-16 border-0 h-[2px] bg-gradient-to-r from-[#6b728000] via-[#6b728075] to-[#6b728000]' />
 
-			<div className='text-gray-100'>
+			<div>
 				<h1 className='font-semibold text-4xl leading-relaxed text-center'>
 					Our Sponsors
 				</h1>
@@ -117,9 +117,8 @@ const Home: NextPage = () => {
 					})}
 				</div>
 			</div>
-			<hr className='mt-16 border-0 h-[2px] bg-gradient-to-r from-[#6b728000] via-[#6b728075] to-[#6b728000]' />
 
-			<Footer />
+			<hr className='mt-16 border-0 h-[2px] bg-gradient-to-r from-[#6b728000] via-[#6b728075] to-[#6b728000]' />
 		</>
 	);
 };
