@@ -1,7 +1,8 @@
 import type { NextPage } from 'next';
 import { BsShieldCheck, BsSearch } from 'react-icons/bs';
 import { BiTransferAlt } from 'react-icons/bi';
-import Footer from '../components/Footer';
+import { TransactionContext } from '../context/TransactionContext';
+import { useContext } from 'react';
 
 const urls = [
 	'/image/binance-logo.png',
@@ -10,7 +11,9 @@ const urls = [
 	'/image/metamask-logo.png',
 ];
 
-const Home: NextPage = () => {
+const Home: NextPage = (): JSX.Element  => {
+	const { connectWallet, currentAccount } = useContext(TransactionContext);
+
 	return (
 		<>
 			<div className='flex flex-col mt-32 lg:flex-row xl:mx-24 2xl:mx-56 gap-12'>
@@ -23,11 +26,14 @@ const Home: NextPage = () => {
 						<br />
 						Buy and sell cryptocurrencies easily on Krypto.
 					</p>
-					<button
-						type='button'
-						className='text-base font-semibold w-full py-3 bg-blue-700 rounded-full'>
-						Connect Wallet
-					</button>
+					{!currentAccount ? (
+						<button
+							type='button'
+							className='text-base font-semibold w-full py-3 bg-blue-700 rounded-full'
+							onClick={connectWallet}>
+							Connect Wallet
+						</button>
+					) : null}
 				</div>
 				<div className='flex-1 perspective'>
 					<div className='flex flex-col mt-10 justify-items-center place-items-center text-xs xs:text-base rotation'>

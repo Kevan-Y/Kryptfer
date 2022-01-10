@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Link from 'next/Link';
-const Navbar = () => {
+import { TransactionContext } from '../context/TransactionContext';
+
+const Navbar = (): JSX.Element => {
+	const { connectWallet, currentAccount } = useContext(TransactionContext);
 	return (
 		<nav className='w-full text-gray-100 transparent flex px-12 lg:px-32 py-4 items-center justify-between'>
 			<Link href='/'>
@@ -18,16 +21,18 @@ const Navbar = () => {
 							<a>Home</a>
 						</Link>
 					</li>
-					<li>
-						<Link href='/wallet'>
-							<a>Wallet</a>
-						</Link>
-					</li>
-					<li className='bg-blue-700 px-4 py-2 rounded-full'>
-						<Link href='/login'>
-							<a>Login</a>
-						</Link>
-					</li>
+					{currentAccount ? (
+						<li>
+							<Link href='/wallet'>
+								<a>Wallet</a>
+							</Link>
+						</li>
+					) : null}
+					{!currentAccount ? (
+						<li className='border px-4 py-2 rounded-full'>
+							<button onClick={connectWallet}>Login</button>
+						</li>
+					) : null}
 				</ul>
 			</div>
 		</nav>

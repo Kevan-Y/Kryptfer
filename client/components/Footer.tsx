@@ -1,7 +1,10 @@
-import React from 'react';
+import { useContext } from 'react';
 import Link from 'next/Link';
+import { TransactionContext } from '../context/TransactionContext';
 
-const Footer = () => {
+const Footer: React.FC = (): JSX.Element => {
+	const { connectWallet, currentAccount } = useContext(TransactionContext);
+
 	return (
 		<footer className='text-gray-100'>
 			<div className='py-16 flex justify-evenly flex-col md:flex-row gap-y-12'>
@@ -19,20 +22,22 @@ const Footer = () => {
 								<a>Home</a>
 							</Link>
 						</li>
+						{currentAccount ? (
+							<li>
+								<Link href='/wallet'>
+									<a>Wallet</a>
+								</Link>
+							</li>
+						) : null}
 						<li>
-							<Link href='/wallet'>
-								<a>Wallet</a>
-							</Link>
-						</li>
-						<li>
-							<Link href='/transaction'>
+							<Link href='#'>
 								<a>Contact us</a>
 							</Link>
 						</li>
 						<li>
-							<Link href='/transaction'>
-								<a>Login</a>
-							</Link>
+							{!currentAccount ? (
+								<button onClick={connectWallet}>Login</button>
+							) : null}
 						</li>
 					</ul>
 				</div>
