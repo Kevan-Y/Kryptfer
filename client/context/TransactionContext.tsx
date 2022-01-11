@@ -166,6 +166,8 @@ export const TransactionProvider = ({
 			const transactionCount = await transactionContract!.getTransactionCount();
 
 			setTransactionCount(transactionCount.toNumber());
+
+			location.reload();
 		} catch (error) {
 			console.error(error);
 		}
