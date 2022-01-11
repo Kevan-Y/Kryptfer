@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import Link from 'next/Link';
+import Link from 'next/link';
 import { TransactionContext } from '../context/TransactionContext';
 
 const Footer: React.FC = (): JSX.Element => {
